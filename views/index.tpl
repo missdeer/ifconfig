@@ -10,7 +10,7 @@
     <meta name="description" content="Get my IP Address" />
     <meta name="keywords" content="ip address ifconfig" />
     <meta name="author" content="{{.Author}}" />
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="/static/img/favicon.ico" />
     <link rev="made" href="mailto: {{.Email}}" />
     <title>What Is My IP Address? - Yet Another ifconfig</title>
     <style type="text/css">
