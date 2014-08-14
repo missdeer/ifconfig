@@ -6,4 +6,4 @@ go:
 env:
   - TRAVIS="yes"
 script:
-  - go get -u -v && go build -v .
+  - go get -u -v && go build .
