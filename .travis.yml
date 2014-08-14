@@ -1,0 +1,9 @@
+language: go
+go:
+  - 1.2
+  - 1.3
+  - tip
+env:
+  - TRAVIS="yes"
+script:
+  - go get -u -v && go build -v .
