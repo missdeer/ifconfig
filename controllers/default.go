@@ -126,41 +126,59 @@ func (this *MainController) GetAll() {
 	this.TplNames = "all.tpl"
 }
 
+type ifconfig struct {
+	Email      string
+	UserAgent  string
+	Host       string
+	IP         string
+	Port       string
+	Method     string
+	Encoding   string
+	Mime       string
+	Connection string
+	Via        string
+	Charset    string
+	Keepalive  string
+	Forwarded  string
+	Lang       string
+	Referer    string
+}
+
 func (this *MainController) GetAllXML() {
-	thisData := make(map[string]interface{})
-	thisData["Email"] = "missdeer@dfordsoft.com"
-	thisData["UserAgent"] = this.Ctx.Request.UserAgent()
-	thisData["Host"] = this.Ctx.Request.Host
-	thisData["IP"] = this.Ctx.Input.IP()
+	thisData := ifconfig{}
+	thisData.Email = "missdeer@dfordsoft.com"
+	thisData.UserAgent = this.Ctx.Request.UserAgent()
+	thisData.Host = this.Ctx.Request.Host
+	thisData.IP = this.Ctx.Input.IP()
 	remote_addr := []byte(this.Ctx.Request.RemoteAddr)
 	pos := bytes.IndexByte(remote_addr, ':')
-	thisData["Port"] = string(remote_addr[pos+1:])
-	thisData["Method"] = this.Ctx.Request.Method
+	thisData.Port = string(remote_addr[pos+1:])
+	thisData.Method = this.Ctx.Request.Method
 	if len(this.Ctx.Request.Header["Accept-Encoding"]) > 0 {
-		thisData["Encoding"] = this.Ctx.Request.Header["Accept-Encoding"][0]
+		thisData.Encoding = this.Ctx.Request.Header["Accept-Encoding"][0]
 	}
 	if len(this.Ctx.Request.Header["Accept"]) > 0 {
-		thisData["Mime"] = this.Ctx.Request.Header["Accept"][0]
+		thisData.Mime = this.Ctx.Request.Header["Accept"][0]
 	}
 	if len(this.Ctx.Request.Header["Connection"]) > 0 {
-		thisData["Connection"] = this.Ctx.Request.Header["Connection"][0]
+		thisData.Connection = this.Ctx.Request.Header["Connection"][0]
 	}
 	if len(this.Ctx.Request.Header["Via"]) > 0 {
-		thisData["Via"] = this.Ctx.Request.Header["Via"][0]
+		thisData.Via = this.Ctx.Request.Header["Via"][0]
 	}
 	if len(this.Ctx.Request.Header["Charset"]) > 0 {
-		thisData["Charset"] = this.Ctx.Request.Header["Charset"][0]
+		thisData.Charset = this.Ctx.Request.Header["Charset"][0]
 	}
 	if len(this.Ctx.Request.Header["KeepAlive"]) > 0 {
-		thisData["Keepalive"] = this.Ctx.Request.Header["KeepAlive"][0]
+		thisData.Keepalive = this.Ctx.Request.Header["KeepAlive"][0]
 	}
 	if len(this.Ctx.Request.Header["X-Forwarded-For"]) > 0 {
-		thisData["Forwarded"] = this.Ctx.Request.Header["X-Forwarded-For"][0]
+		thisData.Forwarded = this.Ctx.Request.Header["X-Forwarded-For"][0]
 	}
 	if len(this.Ctx.Request.Header["Accept-Language"]) > 0 {
-		thisData["Lang"] = this.Ctx.Request.Header["Accept-Language"][0]
+		thisData.Lang = this.Ctx.Request.Header["Accept-Language"][0]
 	}
-	thisData["Referer"] = this.Ctx.Input.Refer()
+	thisData.Referer = this.Ctx.Input.Refer()
 
 	this.Data["xml"] = thisData
 	this.ServeXml()
