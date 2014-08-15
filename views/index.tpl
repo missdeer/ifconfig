@@ -64,16 +64,16 @@
         </table>
       </div>
       <div id="ads">
-      <script type="text/javascript"><!--
-      google_ad_client = "ca-pub-3435940217424489";
-            google_ad_slot = "9166587836";
-        google_ad_width = 728;
-        google_ad_height = 15;
-        //-->
-            </script>
-            <script type="text/javascript"
-            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-            </script>
+<!-- Ads begin -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+    style="display:inline-block;width:728px;height:15px"
+    data-ad-client="ca-pub-3435940217424489"
+    data-ad-slot="9166587836"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- Ads end -->
       </div>
       <div id="info_area">
         <h2>Your Connection</h2>
@@ -82,16 +82,17 @@
             <td class="info_table_label">IP Address</td>
             <td id="ip_address_cell"><strong id="ip_address">{{.IP}}</strong></td>
             <td rowspan="8" id="table_ads">
-<script type="text/javascript"><!--
-google_ad_client = "ca-ca-pub-3435940217424489";
-google_ad_slot = "9166587836";
-google_ad_width = 250;
-google_ad_height = 250;
-//-->
+<!-- Ads begin -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+    style="display:inline-block;width:250px;height:250px"
+    data-ad-client="ca-pub-3435940217424489"
+    data-ad-slot="9166587836"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
+<!-- Ads end -->
+
             </td>
           </tr>
           <tr><td class="info_table_label">Remote Host</td><td>{{.Host}}</td></tr>
@@ -110,16 +111,16 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
         </table>
       </div>
       <div id="middle">
-        <script type="text/javascript"><!--
-          google_ad_client = "ca-pub-3435940217424489";
-          google_ad_slot = "9166587836";
-          google_ad_width = 728;
-          google_ad_height = 90;
-          //-->
-          </script>
-          <script type="text/javascript"
-          src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-          </script>
+<!-- Ads begin -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+    style="display:inline-block;width:728px;height:90px"
+    data-ad-client="ca-pub-3435940217424489"
+    data-ad-slot="9166587836"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- Ads end -->
       </div>
       <div id="cli_wrap">
         <h2>Command Line Interface</h2>
