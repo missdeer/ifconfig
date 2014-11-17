@@ -6,4 +6,5 @@ Yet Another ifconfig inspired by http://ifconfig.me, the online demos are at [ht
 [![Build Status](https://secure.travis-ci.org/missdeer/ifconfig.png)](https://travis-ci.org/missdeer/ifconfig)
 
 Download the pre-built binary from Gobuild.io:
+
 [![Gobuild Download](http://gobuild.io/badge/github.com/missdeer/ifconfig/download.png)](http://gobuild.io/github.com/missdeer/ifconfig)
