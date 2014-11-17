@@ -4,4 +4,5 @@ go:
 env:
   - TRAVIS="yes"
 script:
-  - go get -u -v && go build .
+  - go get github.com/astaxie/beego 
+  - go build .
