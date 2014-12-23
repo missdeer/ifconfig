@@ -2,7 +2,9 @@ package controllers
 
 import (
 	"bytes"
+	"fmt"
 	"github.com/astaxie/beego"
+	"net"
 	"strings"
 )
 
@@ -18,7 +20,17 @@ func (this *MainController) GetForwarded() {
 }
 
 func (this *MainController) GetHost() {
-	this.Data["Value"] = this.Ctx.Request.Host
+	ip := this.Ctx.Input.IP()
+	names, err := net.LookupAddr(ip)
+	if err != nil || len(names) == 0 {
+		this.Data["Value"] = ""
+	} else {
+		var value string
+		for _, v := range names {
+			value += fmt.Sprintf("%s\n", v)
+		}
+		this.Data["Value"] = value
+	}
 	this.TplNames = "value.tpl"
 }
 
@@ -91,7 +103,17 @@ func (this *MainController) GetKeepAlive() {
 func (this *MainController) GetAll() {
 	this.Data["Email"] = "missdeer@dfordsoft.com"
 	this.Data["UserAgent"] = this.Ctx.Request.UserAgent()
-	this.Data["Host"] = this.Ctx.Request.Host
+	ip := this.Ctx.Input.IP()
+	names, err := net.LookupAddr(ip)
+	if err != nil || len(names) == 0 {
+		this.Data["Host"] = ""
+	} else {
+		var value string
+		for _, v := range names {
+			value += fmt.Sprintf("%s\n", v)
+		}
+		this.Data["Host"] = value
+	}
 	this.Data["IP"] = this.Ctx.Input.IP()
 	remote_addr := []byte(this.Ctx.Request.RemoteAddr)
 	pos := bytes.IndexByte(remote_addr, ':')
@@ -148,7 +170,19 @@ func (this *MainController) GetAllXML() {
 	thisData := ifconfig{}
 	thisData.Email = "missdeer@dfordsoft.com"
 	thisData.UserAgent = this.Ctx.Request.UserAgent()
-	thisData.Host = this.Ctx.Request.Host
+
+	ip := this.Ctx.Input.IP()
+	names, err := net.LookupAddr(ip)
+	if err != nil || len(names) == 0 {
+		thisData.Host = ""
+	} else {
+		var value string
+		for _, v := range names {
+			value += fmt.Sprintf("%s\n", v)
+		}
+		thisData.Host = value
+	}
+
 	thisData.IP = this.Ctx.Input.IP()
 	remote_addr := []byte(this.Ctx.Request.RemoteAddr)
 	pos := bytes.IndexByte(remote_addr, ':')
@@ -188,7 +222,18 @@ func (this *MainController) GetAllJSON() {
 	thisData := make(map[string]interface{})
 	thisData["Email"] = "missdeer@dfordsoft.com"
 	thisData["UserAgent"] = this.Ctx.Request.UserAgent()
-	thisData["Host"] = this.Ctx.Request.Host
+	ip := this.Ctx.Input.IP()
+	names, err := net.LookupAddr(ip)
+	if err != nil || len(names) == 0 {
+		thisData["Host"] = ""
+	} else {
+		var value string
+		for _, v := range names {
+			value += fmt.Sprintf("%s\n", v)
+		}
+		thisData["Host"] = value
+	}
+
 	thisData["IP"] = this.Ctx.Input.IP()
 	remote_addr := []byte(this.Ctx.Request.RemoteAddr)
 	pos := bytes.IndexByte(remote_addr, ':')
@@ -227,7 +272,18 @@ func (this *MainController) GetAllJSON() {
 func (this *MainController) Get() {
 	this.Data["Email"] = "missdeer@dfordsoft.com"
 	this.Data["UserAgent"] = this.Ctx.Request.UserAgent()
-	this.Data["Host"] = this.Ctx.Request.Host
+	ip := this.Ctx.Input.IP()
+	names, err := net.LookupAddr(ip)
+	if err != nil || len(names) == 0 {
+		this.Data["Host"] = ""
+	} else {
+		var value string
+		for _, v := range names {
+			value += fmt.Sprintf("%s\n", v)
+		}
+		this.Data["Host"] = value
+	}
+
 	this.Data["IP"] = this.Ctx.Input.IP()
 	remote_addr := []byte(this.Ctx.Request.RemoteAddr)
 	pos := bytes.IndexByte(remote_addr, ':')
