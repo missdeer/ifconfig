@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/astaxie/beego"
-	_ "ifconfig/routers"
+	_ "github.com/missdeer/ifconfig/routers"
 	"os"
 )
 
