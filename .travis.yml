@@ -4,4 +4,5 @@ go:
   - 1.4
   - tip
 script:
-  - go get github.com/astaxie/beego && cd .. && mv ifconfig ../../ && cd ifconfig && go build .
+  - go get github.com/astaxie/beego 
+  - go build .
