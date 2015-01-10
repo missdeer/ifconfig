@@ -1,8 +1,12 @@
 language: go
 go:
-  - 1.3
-  - 1.4
-  - tip
+- 1.3
+- 1.4
+- tip
 script:
-  - go get github.com/astaxie/beego 
-  - go build .
+- go build .
+- pwd && cd $GOPATH/build && ./travis-build.sh
+env:
+  global:
+    - GITHUB_REPO: 'missdeer/ifconfig'
+    - secure: XA0FWLFpgx3eDBZTaQBVDIUrUp7SBoHdECSaH+WujZo9iOMd3pRHBZTx9yfw/YDSvkFlf8CjrSRB9fec/uXono7+w7JYwi23aPqcWK9uqJiBgg6CeWx7aChQNvb0cxEtSupiBPpYOC63O0tDJl4tR3IsjHXPTJyBZm9eTF6QVMw=

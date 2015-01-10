@@ -107,8 +107,8 @@ prebuilt_push() {
 	# check for GitHub access token
 	[ "${GH_TOKEN+set}" = set ] || \
 		skip "GitHub access token not available, not updating prebuilt branch."
-	[ "${#GH_TOKEN}" -eq 40 ] || \
-		abort "GitHub token invalid: found ${#GH_TOKEN} characters, expected 40."
+	#[ "${#GH_TOKEN}" -eq 40 ] || \
+	#	abort "GitHub token invalid: found ${#GH_TOKEN} characters, expected 40."
 
 	cd "${TRAVIS_BUILD_DIR}/doc/html";
 	# setup credentials (hide in "set -x" mode)
