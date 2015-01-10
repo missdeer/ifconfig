@@ -57,7 +57,7 @@ function go-build-all {
 		SRCFILENAME=`echo $@ | sed 's/\.go//'` 
 		CURDIRNAME=${PWD##*/}
 		OUTPUT=${SRCFILENAME:-$CURDIRNAME} # if no src file given, use current dir name
-		CMD="go-${GOOS}-${GOARCH} build -o $OUTPUT-${GOOS}-${GOARCH} $@"
+		CMD="go-${GOOS}-${GOARCH} build -o ../prebuilt/$OUTPUT-${GOOS}-${GOARCH} $@"
 		echo "$CMD"
 		$CMD || FAILURES="$FAILURES $PLATFORM"
 	done
