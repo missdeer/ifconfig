@@ -77,8 +77,8 @@ prebuilt_prepare()
 	git config user.name "${GIT_NAME}"
 	git config user.email "${GIT_EMAIL}"
 	# clean working dir
-	#rm -f .git/index
-	#git clean -df
+	rm -f .git/index
+	git clean -df
 }
 
 prebuilt_commit() {
@@ -87,7 +87,7 @@ prebuilt_commit() {
     ls
 	git add --all;
     git add -f ./ifconfig-*
-    git commit -m "Automatic pre build $(date)";
+    git commit -m "Automatic pre build by travis at $(date)";
 }
 
 gh_setup_askpass() {
