@@ -35,9 +35,9 @@ Download the pre-built binaries for variant platforms:
 
 [Linux arm6](https://github.com/missdeer/ifconfig/raw/prebuilt/ifconfig-linux-arm)
 
-[Windows x86](https://github.com/missdeer/ifconfig/raw/prebuilt/ifconfig-windows-386)
+[Windows x86](https://github.com/missdeer/ifconfig/raw/prebuilt/ifconfig-windows-386), append the extension name ".exe" after downloaded.
 
-[Windows amd64](https://github.com/missdeer/ifconfig/raw/prebuilt/ifconfig-windows-amd64)
+[Windows amd64](https://github.com/missdeer/ifconfig/raw/prebuilt/ifconfig-windows-amd64), append the extension name ".exe" after downloaded.
 
 Download the pre-built binary from Gobuild.io(deprecated):
 
