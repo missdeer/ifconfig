@@ -71,15 +71,13 @@ go_run()
 
 prebuilt_prepare()
 {
-	cd "${TRAVIS_BUILD_DIR}/doc";
-	[ ! -d "html" ] || \
-		abort "Doxygen target directory already exists."
+	cd "${TRAVIS_BUILD_DIR}";
 	git --version
 	git clone --single-branch -b prebuilt "${GITHUB_CLONE}" prebuilt
 	cd prebuilt
 	# setup git config (with defaults)
-	git config user.name "${GIT_NAME-travis}"
-	git config user.email "${GIT_EMAIL-"travis@localhost"}"
+	git config user.name "${GIT_NAME}"
+	git config user.email "${GIT_EMAIL}"
 	# clean working dir
 	rm -f .git/index
 	git clean -df
