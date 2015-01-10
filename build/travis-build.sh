@@ -84,7 +84,7 @@ prebuilt_prepare()
 prebuilt_commit() {
 	cd "${TRAVIS_BUILD_DIR}/prebuilt";
 	git add --all;
-    git add ../prebuilt
+    git add ./*
     git commit -m "Automatic pre build $(date)";
 }
 
