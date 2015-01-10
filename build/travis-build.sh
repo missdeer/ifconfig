@@ -56,17 +56,15 @@ go_install()
 		tar xz -C ${TMPDIR-/tmp} 
     export GOROOT=${TMPDIR-/tmp}/go
     export PATH=${TMPDIR-/tmp}/go/bin/:$PATH
-    wget https://raw.githubusercontent.com/davecheney/golang-crosscompile/master/crosscompile.bash
+    #wget https://raw.githubusercontent.com/davecheney/golang-crosscompile/master/crosscompile.bash
     source ./crosscompile.bash
     go-crosscompile-build-all
 }
 
 go_run()
 {
-    cd $GOPATH
-    go-build-all
-    ls
 	cd "${TRAVIS_BUILD_DIR}";
+    go-build-all
 }
 
 prebuilt_prepare()

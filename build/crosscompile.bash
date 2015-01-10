@@ -38,6 +38,7 @@ function go-all {
 	for PLATFORM in $PLATFORMS; do
 		GOOS=${PLATFORM%/*}
 		GOARCH=${PLATFORM#*/}
+        GOARM=6
 		CMD="go-${GOOS}-${GOARCH} $@"
 		echo "$CMD"
 		$CMD || FAILURES="$FAILURES $PLATFORM"
