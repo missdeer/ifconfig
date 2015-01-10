@@ -84,7 +84,8 @@ prebuilt_prepare()
 prebuilt_commit() {
 	cd "${TRAVIS_BUILD_DIR}/prebuilt";
 	git add --all;
-	git diff-index --quiet HEAD || git commit -m "Automatic pre build";
+    git add ../prebuilt
+    git commit -m "Automatic pre build $(date)";
 }
 
 gh_setup_askpass() {
