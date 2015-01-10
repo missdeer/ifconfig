@@ -77,8 +77,8 @@ prebuilt_prepare()
 	git config user.name "${GIT_NAME}"
 	git config user.email "${GIT_EMAIL}"
 	# clean working dir
-	rm -f .git/index
-	git clean -df
+	#rm -f .git/index
+	#git clean -df
 }
 
 prebuilt_commit() {
@@ -104,8 +104,8 @@ prebuilt_push() {
 	# check for GitHub access token
 	[ "${GH_TOKEN+set}" = set ] || \
 		skip "GitHub access token not available, not updating prebuilt branch."
-	#[ "${#GH_TOKEN}" -eq 40 ] || \
-	#	abort "GitHub token invalid: found ${#GH_TOKEN} characters, expected 40."
+	[ "${#GH_TOKEN}" -eq 40 ] || \
+		abort "GitHub token invalid: found ${#GH_TOKEN} characters, expected 40."
 
 	cd "${TRAVIS_BUILD_DIR}/prebuilt";
 	# setup credentials (hide in "set -x" mode)
