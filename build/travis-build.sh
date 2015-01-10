@@ -106,7 +106,7 @@ prebuilt_push() {
 	#[ "${#GH_TOKEN}" -eq 40 ] || \
 	#	abort "GitHub token invalid: found ${#GH_TOKEN} characters, expected 40."
 
-	cd "${TRAVIS_BUILD_DIR}/doc/html";
+	cd "${TRAVIS_BUILD_DIR}/prebuilt";
 	# setup credentials (hide in "set -x" mode)
 	git remote set-url --push origin "${GITHUB_URL}"
 	git config credential.helper 'store'
