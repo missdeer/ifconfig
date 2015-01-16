@@ -9,7 +9,7 @@
 set -e
 
 SUDO=sudo
-GO_VER=go1.4
+GO_VER=go1.4.1
 GO_TAR=${GO_VER}.linux-amd64.tar.gz
 GO_URL="https://storage.googleapis.com/golang/${GO_TAR}"
 
