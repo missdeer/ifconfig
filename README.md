@@ -1,7 +1,7 @@
 ifconfig
 ========
 
-Yet Another ifconfig inspired by http://ifconfig.me, the online demos are at [http://ifconfig.jd-app.com](http://ifconfig.jd-app.com) and [http://ifconfig.sohuapps.com](http://ifconfig.sohuapps.com).
+Yet Another ifconfig inspired by http://ifconfig.me, the online demos are at [https://ifconfig.minidump.info](https://ifconfig.minidump.info).
 
 [![Build Status](https://secure.travis-ci.org/missdeer/ifconfig.png)](https://travis-ci.org/missdeer/ifconfig)
 
