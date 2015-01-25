@@ -16,5 +16,5 @@ func main() {
 	if port = os.Getenv(PortVar); port == "" {
 		port = "8080"
 	}
-	beego.Run(":" + port)
+	beego.Run(beego.HttpAddr + ":" + port)
 }
