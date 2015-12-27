@@ -272,7 +272,7 @@ func (this *MainController) GetAllJSON() {
 
 func (this *MainController) Get() {
 	if noweb := os.Getenv("NOWEB"); noweb == "1" {
-		this.Abort(404)
+		this.Abort("404")
 		return
 	}
 	this.Data["Email"] = "missdeer@dfordsoft.com"
