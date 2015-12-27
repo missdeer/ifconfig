@@ -9,7 +9,7 @@
 set -e
 
 SUDO=sudo
-GO_VER=go1.4.1
+GO_VER=go1.5.2
 GO_TAR=${GO_VER}.linux-amd64.tar.gz
 GO_URL="https://storage.googleapis.com/golang/${GO_TAR}"
 
@@ -56,9 +56,6 @@ go_install()
 		tar xz -C ${TMPDIR-/tmp} 
     export GOROOT=${TMPDIR-/tmp}/go
     export PATH=${TMPDIR-/tmp}/go/bin/:$PATH
-    #wget https://raw.githubusercontent.com/davecheney/golang-crosscompile/master/crosscompile.bash
-    source ./crosscompile.bash
-    go-crosscompile-build-all
 }
 
 go_run()
