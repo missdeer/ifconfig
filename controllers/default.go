@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/astaxie/beego"
 	"net"
+	"os"
 	"strings"
 )
 
@@ -270,6 +271,10 @@ func (this *MainController) GetAllJSON() {
 }
 
 func (this *MainController) Get() {
+	if noweb := os.Getenv("NOWEB"); noweb == "1" {
+		this.Abort(404)
+		return
+	}
 	this.Data["Email"] = "missdeer@dfordsoft.com"
 	this.Data["UserAgent"] = this.Ctx.Request.UserAgent()
 	ip := this.Ctx.Input.IP()
