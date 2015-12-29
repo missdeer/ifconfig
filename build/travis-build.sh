@@ -61,26 +61,26 @@ go_install()
 go_run()
 {
 	cd "${TRAVIS_BUILD_DIR}";
-    GOARCH=amd64 GOOS=linux go build -ldflags="-s" -o ifconfig-linux-amd64
-    GOARCH=386 GOOS=linux go build -ldflags="-s" -o ifconfig-linux-386
-    GOARCH=arm GOOS=linux go build -ldflags="-s" -o ifconfig-linux-arm
-    GOARCH=arm64 GOOS=linux go build -ldflags="-s" -o ifconfig-linux-arm64
-    GOARCH=ppc64 GOOS=linux go build -ldflags="-s" -o ifconfig-linux-ppc64
-    GOARCH=ppc64le GOOS=linux go build -ldflags="-s" -o ifconfig-linux-ppc64le
-    GOARCH=amd64 GOOS=dragonfly go build -ldflags="-s" -o ifconfig-dragonfly-amd64
-    GOARCH=amd64 GOOS=freebsd go build -ldflags="-s" -o ifconfig-freebsd-amd64
-    GOARCH=386 GOOS=freebsd go build -ldflags="-s" -o ifconfig-freebsd-amd64
-    GOARCH=arm GOOS=freebsd go build -ldflags="-s" -o ifconfig-freebsd-amd64
-    GOARCH=amd64 GOOS=netbsd go build -ldflags="-s" -o ifconfig-netbsd-amd64
-    GOARCH=386 GOOS=netbsd go build -ldflags="-s" -o ifconfig-netbsd-amd64
-    GOARCH=arm GOOS=netbsd go build -ldflags="-s" -o ifconfig-netbsd-amd64
-    GOARCH=amd64 GOOS=openbsd go build -ldflags="-s" -o ifconfig-openbsd-amd64
-    GOARCH=386 GOOS=openbsd go build -ldflags="-s" -o ifconfig-openbsd-amd64
-    GOARCH=arm GOOS=openbsd go build -ldflags="-s" -o ifconfig-openbsd-amd64
-    GOARCH=amd64 GOOS=darwin go build -o ifconfig-darwin-amd64
-    GOARCH=386 GOOS=darwin go build -o ifconfig-darwin-amd64
-    GOARCH=amd64 GOOS=windows go build -o ifconfig-windows-amd64
-    GOARCH=386 GOOS=windows go build -o ifconfig-windows-386
+    GOARCH=amd64 GOOS=linux go build -ldflags="-s" -o prebuild/ifconfig-linux-amd64
+    GOARCH=386 GOOS=linux go build -ldflags="-s" -o prebuild/ifconfig-linux-386
+    GOARCH=arm GOOS=linux go build -ldflags="-s" -o prebuild/ifconfig-linux-arm
+    GOARCH=arm64 GOOS=linux go build -ldflags="-s" -o prebuild/ifconfig-linux-arm64
+    GOARCH=ppc64 GOOS=linux go build -ldflags="-s" -o prebuild/ifconfig-linux-ppc64
+    GOARCH=ppc64le GOOS=linux go build -ldflags="-s" -o prebuild/ifconfig-linux-ppc64le
+    GOARCH=amd64 GOOS=dragonfly go build -ldflags="-s" -o prebuild/ifconfig-dragonfly-amd64
+    GOARCH=amd64 GOOS=freebsd go build -ldflags="-s" -o prebuild/ifconfig-freebsd-amd64
+    GOARCH=386 GOOS=freebsd go build -ldflags="-s" -o prebuild/ifconfig-freebsd-amd64
+    GOARCH=arm GOOS=freebsd go build -ldflags="-s" -o prebuild/ifconfig-freebsd-amd64
+    GOARCH=amd64 GOOS=netbsd go build -ldflags="-s" -o prebuild/ifconfig-netbsd-amd64
+    GOARCH=386 GOOS=netbsd go build -ldflags="-s" -o prebuild/ifconfig-netbsd-amd64
+    GOARCH=arm GOOS=netbsd go build -ldflags="-s" -o prebuild/ifconfig-netbsd-amd64
+    GOARCH=amd64 GOOS=openbsd go build -ldflags="-s" -o prebuild/ifconfig-openbsd-amd64
+    GOARCH=386 GOOS=openbsd go build -ldflags="-s" -o prebuild/ifconfig-openbsd-amd64
+    GOARCH=arm GOOS=openbsd go build -ldflags="-s" -o prebuild/ifconfig-openbsd-amd64
+    GOARCH=amd64 GOOS=darwin go build -o prebuild/ifconfig-darwin-amd64
+    GOARCH=386 GOOS=darwin go build -o prebuild/ifconfig-darwin-amd64
+    GOARCH=amd64 GOOS=windows go build -o prebuild/ifconfig-windows-amd64
+    GOARCH=386 GOOS=windows go build -o prebuild/ifconfig-windows-386
 }
 
 prebuilt_prepare()
