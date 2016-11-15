@@ -52,7 +52,7 @@
         <table>
           <tr>
             <td>
-              <h1><a href="http://ifconfig.jd-app.com">What Is My IP Address? - Yet Another ifconfig</a></h1>
+              <h1><a href="https://ifconfig.minidump.info">What Is My IP Address? - Yet Another ifconfig</a></h1>
             </td>
             <td></td>
           </tr>
@@ -125,38 +125,27 @@
       <div id="cli_wrap">
         <h2>Command Line Interface</h2>
         <table id="cli_table" summary="cli">
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com</td><td class="cli_arrow">&rArr;</td><td>{{.IP}}</td></tr>
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com/ip</td><td class="cli_arrow">&rArr;</td><td>{{.IP}}</td></tr>
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com/host</td><td class="cli_arrow">&rArr;</td><td>{{.Host}}</td></tr>
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com/ua</td><td class="cli_arrow">&rArr;</td><td>{{.UserAgent}}</td></tr>
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com/port</td><td class="cli_arrow">&rArr;</td><td>{{.Port}}</td></tr>
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com/lang</td><td class="cli_arrow">&rArr;</td><td>{{.Lang}}</td></tr>
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com/keepalive</td><td class="cli_arrow">&rArr;</td><td>{{.Keepalive}}</td></tr>
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com/connection</td><td class="cli_arrow">&rArr;</td><td>{{.Connection}}</td></tr>
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com/encoding</td><td class="cli_arrow">&rArr;</td><td>{{.Encoding}}</td></tr>
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com/mime</td><td class="cli_arrow">&rArr;</td><td>{{.Mime}}</td></tr>
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com/charset</td><td class="cli_arrow">&rArr;</td><td>{{.Charset}}</td></tr>
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com/via</td><td class="cli_arrow">&rArr;</td><td>{{.Via}}</td></tr>
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com/forwarded</td><td class="cli_arrow">&rArr;</td><td>{{.Forwarded}}</td></tr>
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com/all</td><td class="cli_arrow">&rArr;</td><td>ip_addr: {{.IP}}<br />remote_host: {{.Host}} <br />user_agent: {{.UserAgent}}<br />port: {{.Port}}<br />lang: {{.Lang}}<br />connection: {{.Connection}}<br />keep_alive: {{.Keepalive}}<br />encoding: {{.Encoding}}<br />mime: {{.Mime}}<br />charset: {{.Charset}}<br />via: {{.Via}}<br />forwarded: {{.Forwarded}}<br /></td></tr>
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com/all.xml</td><td class="cli_arrow">&rArr;</td><td>&lt;info&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;charset&gt;{{.Charset}}&lt;/charset&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;connection&gt;{{.Connection}}&lt;/connection&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;encoding&gt;{{.Encoding}}&lt;/encoding&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;forwarded&gt;{{.Forwarded}}&lt;/forwarded&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;ip_addr&gt;{{.IP}}&lt;/ip_addr&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;keep_alive&gt;{{.Keepalive}}&lt;/keep_alive&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;lang&gt;{{.Lang}}&lt;/lang&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;mime&gt;{{.Mime}}&lt;/mime&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;port&gt;{{.Port}}&lt;/port&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;remote_host&gt;{{.Host}}&lt;/remote_host&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;user_agent&gt;{{.UserAgent}}&lt;/user_agent&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;via&gt;{{.Via}}&lt;/via&gt;<br />
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info</td><td class="cli_arrow">&rArr;</td><td>{{.IP}}</td></tr>
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info/ip</td><td class="cli_arrow">&rArr;</td><td>{{.IP}}</td></tr>
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info/host</td><td class="cli_arrow">&rArr;</td><td>{{.Host}}</td></tr>
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info/ua</td><td class="cli_arrow">&rArr;</td><td>{{.UserAgent}}</td></tr>
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info/port</td><td class="cli_arrow">&rArr;</td><td>{{.Port}}</td></tr>
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info/lang</td><td class="cli_arrow">&rArr;</td><td>{{.Lang}}</td></tr>
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info/keepalive</td><td class="cli_arrow">&rArr;</td><td>{{.Keepalive}}</td></tr>
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info/connection</td><td class="cli_arrow">&rArr;</td><td>{{.Connection}}</td></tr>
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info/encoding</td><td class="cli_arrow">&rArr;</td><td>{{.Encoding}}</td></tr>
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info/mime</td><td class="cli_arrow">&rArr;</td><td>{{.Mime}}</td></tr>
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info/charset</td><td class="cli_arrow">&rArr;</td><td>{{.Charset}}</td></tr>
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info/via</td><td class="cli_arrow">&rArr;</td><td>{{.Via}}</td></tr>
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info/forwarded</td><td class="cli_arrow">&rArr;</td><td>{{.Forwarded}}</td></tr>
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info/all</td><td class="cli_arrow">&rArr;</td><td>ip_addr: {{.IP}}<br />remote_host: {{.Host}} <br />user_agent: {{.UserAgent}}<br />port: {{.Port}}<br />lang: {{.Lang}}<br />connection: {{.Connection}}<br />keep_alive: {{.Keepalive}}<br />encoding: {{.Encoding}}<br />mime: {{.Mime}}<br />charset: {{.Charset}}<br />via: {{.Via}}<br />forwarded: {{.Forwarded}}<br /></td></tr>
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info/all.xml</td><td class="cli_arrow">&rArr;</td><td>&lt;info&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;charset&gt;{{.Charset}}&lt;/charset&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;connection&gt;{{.Connection}}&lt;/connection&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;encoding&gt;{{.Encoding}}&lt;/encoding&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;forwarded&gt;{{.Forwarded}}&lt;/forwarded&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;ip_addr&gt;{{.IP}}&lt;/ip_addr&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;keep_alive&gt;{{.Keepalive}}&lt;/keep_alive&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;lang&gt;{{.Lang}}&lt;/lang&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;mime&gt;{{.Mime}}&lt;/mime&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;port&gt;{{.Port}}&lt;/port&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;remote_host&gt;{{.Host}}&lt;/remote_host&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;user_agent&gt;{{.UserAgent}}&lt;/user_agent&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;via&gt;{{.Via}}&lt;/via&gt;<br />
 &lt;/info&gt;<br />
 </td></tr>
-          <tr><td class="cli_command">$ curl ifconfig.jd-app.com/all.json</td><td class="cli_arrow">&rArr;</td><td>{"connection":"{{.Connection}}","ip_addr":"{{.IP}}","lang":"{{.Lang}}","remote_host":"{{.Host}}","user_agent":"{{.UserAgent}}","charset":"{{.Charset}}","port":"{{.Port}}","via":"{{.Via}}","forwarded":"{{.Forwarded}}","mime":"{{.Mime}}","keep_alive":"{{.Keepalive}}","encoding":"{{.Encoding}}"}</td></tr>
+          <tr><td class="cli_command">$ curl https://ifconfig.minidump.info/all.json</td><td class="cli_arrow">&rArr;</td><td>{"connection":"{{.Connection}}","ip_addr":"{{.IP}}","lang":"{{.Lang}}","remote_host":"{{.Host}}","user_agent":"{{.UserAgent}}","charset":"{{.Charset}}","port":"{{.Port}}","via":"{{.Via}}","forwarded":"{{.Forwarded}}","mime":"{{.Mime}}","keep_alive":"{{.Keepalive}}","encoding":"{{.Encoding}}"}</td></tr>
         </table>
       </div>
-      <div id="footer">&copy; 2014 <a href="http://minidump.info">minidump.info</a></div>
+      <div id="footer">&copy; 2014 - 2016 <a href="https://ifconfig.minidump.info">https://ifconfig.minidump.info</a></div>
     </div>
-    <!--
-    <script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-        </script>
-            <script type="text/javascript">
-            try {
-                var pageTracker = _gat._getTracker("UA-10827147-6");
-                pageTracker._trackPageview();
-        } catch(err) {}</script>
-    -->
   </body>	
 </html>
