@@ -1,12 +1,12 @@
 language: go
 go:
-- 1.5
+  - 1.7.3
+  - tip
 script:
-- go build .
-- pwd && cd build && ./travis-build.sh
+  - go build .
 env:
   global:
-  - GITHUB_REPO: missdeer/ifconfig
-  - GIT_NAME: missdeer
-  - GIT_EMAIL: missdeer@dfordsoft.com
-  - secure: Putn2dfCb7wEXFZ5yF/TFo8HHiyIGf7b80C5lJHB4YTKxKBic8xOd3v6IhVfXNZgHSvuA+TVDI9VQJ9eRviJalCVN1qP88oLlrj4/q1WeF9DDUxpTPHV1uP/z6F8s0nmyICRFPs7Gq0fUyfZae+DgF0uaZT+6VxDksjg25eYFFQ=
+    - GITHUB_REPO: missdeer/ifconfig
+    - GIT_NAME: missdeer
+    - GIT_EMAIL: missdeer@dfordsoft.com
+    - secure: Putn2dfCb7wEXFZ5yF/TFo8HHiyIGf7b80C5lJHB4YTKxKBic8xOd3v6IhVfXNZgHSvuA+TVDI9VQJ9eRviJalCVN1qP88oLlrj4/q1WeF9DDUxpTPHV1uP/z6F8s0nmyICRFPs7Gq0fUyfZae+DgF0uaZT+6VxDksjg25eYFFQ=
