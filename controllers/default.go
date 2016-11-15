@@ -17,7 +17,7 @@ func (this *MainController) GetForwarded() {
 	if len(this.Ctx.Request.Header["X-Forwarded-For"]) > 0 {
 		this.Data["Value"] = this.Ctx.Request.Header["X-Forwarded-For"][0]
 	}
-	this.TplNames = "value.tpl"
+	this.TplName = "value.tpl"
 }
 
 func (this *MainController) GetHost() {
@@ -32,73 +32,73 @@ func (this *MainController) GetHost() {
 		}
 		this.Data["Value"] = value
 	}
-	this.TplNames = "value.tpl"
+	this.TplName = "value.tpl"
 }
 
 func (this *MainController) GetIP() {
 	this.Data["Value"] = this.Ctx.Input.IP()
-	this.TplNames = "value.tpl"
+	this.TplName = "value.tpl"
 }
 
 func (this *MainController) GetPort() {
 	remote_addr := []byte(this.Ctx.Request.RemoteAddr)
 	pos := bytes.IndexByte(remote_addr, ':')
 	this.Data["Value"] = string(remote_addr[pos+1:])
-	this.TplNames = "value.tpl"
+	this.TplName = "value.tpl"
 }
 
 func (this *MainController) GetVia() {
 	if len(this.Ctx.Request.Header["Via"]) > 0 {
 		this.Data["Value"] = this.Ctx.Request.Header["Via"][0]
 	}
-	this.TplNames = "value.tpl"
+	this.TplName = "value.tpl"
 }
 
 func (this *MainController) GetMime() {
 	if len(this.Ctx.Request.Header["Accept"]) > 0 {
 		this.Data["Value"] = this.Ctx.Request.Header["Accept"][0]
 	}
-	this.TplNames = "value.tpl"
+	this.TplName = "value.tpl"
 }
 
 func (this *MainController) GetLang() {
 	if len(this.Ctx.Request.Header["Accept-Language"]) > 0 {
 		this.Data["Value"] = this.Ctx.Request.Header["Accept-Language"][0]
 	}
-	this.TplNames = "value.tpl"
+	this.TplName = "value.tpl"
 }
 
 func (this *MainController) GetCharset() {
 	if len(this.Ctx.Request.Header["Charset"]) > 0 {
 		this.Data["Value"] = this.Ctx.Request.Header["Charset"][0]
 	}
-	this.TplNames = "value.tpl"
+	this.TplName = "value.tpl"
 }
 
 func (this *MainController) GetEncoding() {
 	if len(this.Ctx.Request.Header["Accept-Encoding"]) > 0 {
 		this.Data["Value"] = this.Ctx.Request.Header["Accept-Encoding"][0]
 	}
-	this.TplNames = "value.tpl"
+	this.TplName = "value.tpl"
 }
 
 func (this *MainController) GetUserAgent() {
 	this.Data["Value"] = this.Ctx.Request.UserAgent()
-	this.TplNames = "value.tpl"
+	this.TplName = "value.tpl"
 }
 
 func (this *MainController) GetConnection() {
 	if len(this.Ctx.Request.Header["Connection"]) > 0 {
 		this.Data["Value"] = this.Ctx.Request.Header["Connection"][0]
 	}
-	this.TplNames = "value.tpl"
+	this.TplName = "value.tpl"
 }
 
 func (this *MainController) GetKeepAlive() {
 	if len(this.Ctx.Request.Header["KeepAlive"]) > 0 {
 		this.Data["Value"] = this.Ctx.Request.Header["KeepAlive"][0]
 	}
-	this.TplNames = "value.tpl"
+	this.TplName = "value.tpl"
 }
 
 func (this *MainController) GetAll() {
@@ -146,7 +146,7 @@ func (this *MainController) GetAll() {
 	}
 	this.Data["Referer"] = this.Ctx.Input.Refer()
 
-	this.TplNames = "all.tpl"
+	this.TplName = "all.tpl"
 }
 
 type ifconfig struct {
@@ -216,7 +216,7 @@ func (this *MainController) GetAllXML() {
 	thisData.Referer = this.Ctx.Input.Refer()
 
 	this.Data["xml"] = thisData
-	this.ServeXml()
+	this.ServeXML()
 }
 
 func (this *MainController) GetAllJSON() {
@@ -267,7 +267,7 @@ func (this *MainController) GetAllJSON() {
 	thisData["Referer"] = this.Ctx.Input.Refer()
 
 	this.Data["json"] = thisData
-	this.ServeJson()
+	this.ServeJSON()
 }
 
 func (this *MainController) Get() {
@@ -321,8 +321,8 @@ func (this *MainController) Get() {
 	this.Data["Referer"] = this.Ctx.Input.Refer()
 
 	if strings.Contains(this.Ctx.Request.UserAgent(), "curl") {
-		this.TplNames = "iponly.tpl"
+		this.TplName = "iponly.tpl"
 	} else {
-		this.TplNames = "index.tpl"
+		this.TplName = "index.tpl"
 	}
 }
