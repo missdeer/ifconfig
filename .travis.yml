@@ -1,8 +1,7 @@
 language: go
 go:
   - tip
-install:
-  - go get github.com/astaxie/beego
+  
 script:
   - env GOPATH=$GOPATH:$PWD/../.. GOARCH=amd64 GOOS=linux go build -ldflags="-s -w"  && tar czvf ifconfig-linux-amd64.tar.gz ifconfig views static conf
   - env GOPATH=$GOPATH:$PWD/../.. GOARCH=386 GOOS=linux go build -ldflags="-s -w"  && tar czvf ifconfig-linux-x86.tar.gz ifconfig views static conf
@@ -61,6 +60,6 @@ deploy:
     - ifconfig-windows-amd64.tar.gz              
     - ifconfig-windows-x86.tar.gz                
   on:
-    repo: dfordsoft/ifconfig
+    repo: missdeer/ifconfig
     tags: true
   skip_cleanup: true

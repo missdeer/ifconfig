@@ -3,10 +3,11 @@ package controllers
 import (
 	"bytes"
 	"fmt"
-	"github.com/astaxie/beego"
 	"net"
 	"os"
 	"strings"
+
+	"github.com/astaxie/beego"
 )
 
 type MainController struct {
