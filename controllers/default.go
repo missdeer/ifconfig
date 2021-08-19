@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/astaxie/beego"
+	"github.com/beego/beego"
 )
 
 type MainController struct {
