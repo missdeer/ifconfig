@@ -1,25 +1,29 @@
 package routers
 
 import (
-	"github.com/beego/beego"
+	"github.com/beego/beego/v2/server/web"
 	"github.com/missdeer/ifconfig/controllers"
 )
 
 func init() {
-	beego.Router("/", &controllers.MainController{}, "get:Get")
-	beego.Router("/ip", &controllers.MainController{}, "get:GetIP")
-	beego.Router("/host", &controllers.MainController{}, "get:GetHost")
-	beego.Router("/ua", &controllers.MainController{}, "get:GetUserAgent")
-	beego.Router("/port", &controllers.MainController{}, "get:GetPort")
-	beego.Router("/keepalive", &controllers.MainController{}, "get:GetKeepAlive")
-	beego.Router("/lang", &controllers.MainController{}, "get:GetLang")
-	beego.Router("/connection", &controllers.MainController{}, "get:GetConnection")
-	beego.Router("/encoding", &controllers.MainController{}, "get:GetEncoding")
-	beego.Router("/via", &controllers.MainController{}, "get:GetVia")
-	beego.Router("/mime", &controllers.MainController{}, "get:GetMime")
-	beego.Router("/charset", &controllers.MainController{}, "get:GetCharset")
-	beego.Router("/forwarded", &controllers.MainController{}, "get:GetForwarded")
-	beego.Router("/all", &controllers.MainController{}, "get:GetAll")
-	beego.Router("/all.xml", &controllers.MainController{}, "get:GetAllXML")
-	beego.Router("/all.json", &controllers.MainController{}, "get:GetAllJSON")
+	web.Router("/", &controllers.MainController{}, "get:Get")
+	web.Router("/ipip", &controllers.MainController{}, "get:GetLocationFromIPIP")
+	web.Router("/ip2region", &controllers.MainController{}, "get:GetLocationFromIP2Region")
+	web.Router("/qqwry", &controllers.MainController{}, "get:GetLocationFromQQWry")
+	web.Router("/geoip2", &controllers.MainController{}, "get:GetLocationFromGeoIP2")
+	web.Router("/ip", &controllers.MainController{}, "get:GetIP")
+	web.Router("/host", &controllers.MainController{}, "get:GetHost")
+	web.Router("/ua", &controllers.MainController{}, "get:GetUserAgent")
+	web.Router("/port", &controllers.MainController{}, "get:GetPort")
+	web.Router("/keepalive", &controllers.MainController{}, "get:GetKeepAlive")
+	web.Router("/lang", &controllers.MainController{}, "get:GetLang")
+	web.Router("/connection", &controllers.MainController{}, "get:GetConnection")
+	web.Router("/encoding", &controllers.MainController{}, "get:GetEncoding")
+	web.Router("/via", &controllers.MainController{}, "get:GetVia")
+	web.Router("/mime", &controllers.MainController{}, "get:GetMime")
+	web.Router("/charset", &controllers.MainController{}, "get:GetCharset")
+	web.Router("/forwarded", &controllers.MainController{}, "get:GetForwarded")
+	web.Router("/all", &controllers.MainController{}, "get:GetAll")
+	web.Router("/all.xml", &controllers.MainController{}, "get:GetAllXML")
+	web.Router("/all.json", &controllers.MainController{}, "get:GetAllJSON")
 }

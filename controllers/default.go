@@ -2,16 +2,132 @@ package controllers
 
 import (
 	"bytes"
+	"errors"
 	"fmt"
+	"log"
 	"net"
 	"os"
 	"strings"
 
-	"github.com/beego/beego"
+	"github.com/beego/beego/v2/server/web"
+	"github.com/zu1k/nali/pkg/geoip"
+	"github.com/zu1k/nali/pkg/ip2region"
+	"github.com/zu1k/nali/pkg/ipip"
+	"github.com/zu1k/nali/pkg/qqwry"
 )
 
+const (
+	QQWryPath        = "qqwry.dat"
+	ZXIPv6WryPath    = "zxipv6wry.db"
+	GeoLite2CityPath = "GeoLite2-City.mmdb"
+	IPIPFreePath     = "ipipfree.ipdb"
+	Ip2RegionPath    = "ip2region.db"
+)
+
+var (
+	geoip2Instance    *geoip.GeoIP
+	qqwryInstance     *qqwry.QQwry
+	ipipInstance      *ipip.IPIPFree
+	ip2regionInstance *ip2region.Ip2Region
+)
+
+func init() {
+	geoip2Instance, _ = geoip.NewGeoIP(GeoLite2CityPath)
+	qqwryInstance, _ = qqwry.NewQQwry(QQWryPath)
+	ipipInstance, _ = ipip.NewIPIPFree(IPIPFreePath)
+	ip2regionInstance, _ = ip2region.NewIp2Region(Ip2RegionPath)
+}
+
 type MainController struct {
-	beego.Controller
+	web.Controller
+}
+
+func (this *MainController) QueryGeoip2(ip string) (string, error) {
+	if geoip2Instance == nil {
+		return "", errors.New("Geoip2 service not available")
+	}
+	res, err := geoip2Instance.Find(ip)
+	if err != nil {
+		return "", err
+	}
+	return res.String(), nil
+}
+
+func (this *MainController) GetLocationFromGeoIP2() {
+	ip := this.GetString("ip", this.Ctx.Input.IP())
+	res, err := this.QueryGeoip2(ip)
+	if err != nil {
+		this.Data["Value"] = err.Error()
+	} else {
+		this.Data["Value"] = res
+	}
+	this.TplName = "value.tpl"
+}
+
+func (this *MainController) QueryQQWry(ip string) (string, error) {
+	if qqwryInstance == nil {
+		return "", errors.New("QQWry service not available")
+	}
+	res, err := qqwryInstance.Find(ip)
+	if err != nil {
+		return "", err
+	}
+	return res.String(), nil
+}
+
+func (this *MainController) GetLocationFromQQWry() {
+	ip := this.GetString("ip", this.Ctx.Input.IP())
+	res, err := this.QueryQQWry(ip)
+	if err != nil {
+		this.Data["Value"] = err.Error()
+	} else {
+		this.Data["Value"] = res
+	}
+	this.TplName = "value.tpl"
+}
+
+func (this *MainController) QueryIPIPFree(ip string) (string, error) {
+	if ipipInstance == nil {
+		return "", errors.New("IPIP free service not available")
+	}
+	res, err := ipipInstance.Find(ip)
+	if err != nil {
+		return "", err
+	}
+	return res.String(), nil
+}
+
+func (this *MainController) GetLocationFromIPIP() {
+	ip := this.GetString("ip", this.Ctx.Input.IP())
+	res, err := this.QueryIPIPFree(ip)
+	if err != nil {
+		this.Data["Value"] = err.Error()
+	} else {
+		this.Data["Value"] = res
+	}
+	this.TplName = "value.tpl"
+}
+
+func (this *MainController) QueryIP2Region(ip string) (string, error) {
+	if ip2regionInstance == nil {
+		return "", errors.New("IP2Region service not available")
+	}
+	res, err := ip2regionInstance.Find(ip)
+	if err != nil {
+		return "", err
+	}
+	return res.String(), nil
+}
+
+func (this *MainController) GetLocationFromIP2Region() {
+	ip := this.GetString("ip", this.Ctx.Input.IP())
+	res, err := this.QueryIP2Region(ip)
+	if err != nil {
+		this.Data["Value"] = err.Error()
+	} else {
+		this.Data["Value"] = res
+	}
+	this.TplName = "value.tpl"
 }
 
 func (this *MainController) GetForwarded() {
@@ -22,7 +138,7 @@ func (this *MainController) GetForwarded() {
 }
 
 func (this *MainController) GetHost() {
-	ip := this.Ctx.Input.IP()
+	ip := this.GetString("ip", this.Ctx.Input.IP())
 	names, err := net.LookupAddr(ip)
 	if err != nil || len(names) == 0 {
 		this.Data["Value"] = ""
@@ -37,7 +153,8 @@ func (this *MainController) GetHost() {
 }
 
 func (this *MainController) GetIP() {
-	this.Data["Value"] = this.Ctx.Input.IP()
+	ip := this.GetString("ip", this.Ctx.Input.IP())
+	this.Data["Value"] = ip
 	this.TplName = "value.tpl"
 }
 
@@ -105,7 +222,7 @@ func (this *MainController) GetKeepAlive() {
 func (this *MainController) GetAll() {
 	this.Data["Email"] = "missdeer@dfordsoft.com"
 	this.Data["UserAgent"] = this.Ctx.Request.UserAgent()
-	ip := this.Ctx.Input.IP()
+	ip := this.GetString("ip", this.Ctx.Input.IP())
 	names, err := net.LookupAddr(ip)
 	if err != nil || len(names) == 0 {
 		this.Data["Host"] = ""
@@ -116,7 +233,11 @@ func (this *MainController) GetAll() {
 		}
 		this.Data["Host"] = value
 	}
-	this.Data["IP"] = this.Ctx.Input.IP()
+	this.Data["IP"] = ip
+	this.Data["Geoip2"], _ = this.QueryGeoip2(ip)
+	this.Data["IPIP"], _ = this.QueryIPIPFree(ip)
+	this.Data["QQWry"], _ = this.QueryQQWry(ip)
+	this.Data["IP2Region"], _ = this.QueryIP2Region(ip)
 	remote_addr := []byte(this.Ctx.Request.RemoteAddr)
 	pos := bytes.IndexByte(remote_addr, ':')
 	this.Data["Port"] = string(remote_addr[pos+1:])
@@ -152,6 +273,10 @@ func (this *MainController) GetAll() {
 
 type ifconfig struct {
 	Email      string
+	QQWry      string
+	Geoip2     string
+	IPIP       string
+	IP2Region  string
 	UserAgent  string
 	Host       string
 	IP         string
@@ -173,7 +298,7 @@ func (this *MainController) GetAllXML() {
 	thisData.Email = "missdeer@dfordsoft.com"
 	thisData.UserAgent = this.Ctx.Request.UserAgent()
 
-	ip := this.Ctx.Input.IP()
+	ip := this.GetString("ip", this.Ctx.Input.IP())
 	names, err := net.LookupAddr(ip)
 	if err != nil || len(names) == 0 {
 		thisData.Host = ""
@@ -185,7 +310,12 @@ func (this *MainController) GetAllXML() {
 		thisData.Host = value
 	}
 
-	thisData.IP = this.Ctx.Input.IP()
+	thisData.IP = ip
+	thisData.Geoip2, _ = this.QueryGeoip2(ip)
+	thisData.IPIP, _ = this.QueryIPIPFree(ip)
+	thisData.QQWry, _ = this.QueryQQWry(ip)
+	thisData.IP2Region, _ = this.QueryIP2Region(ip)
+	log.Println(thisData.IP2Region)
 	remote_addr := []byte(this.Ctx.Request.RemoteAddr)
 	pos := bytes.IndexByte(remote_addr, ':')
 	thisData.Port = string(remote_addr[pos+1:])
@@ -224,7 +354,7 @@ func (this *MainController) GetAllJSON() {
 	thisData := make(map[string]interface{})
 	thisData["Email"] = "missdeer@dfordsoft.com"
 	thisData["UserAgent"] = this.Ctx.Request.UserAgent()
-	ip := this.Ctx.Input.IP()
+	ip := this.GetString("ip", this.Ctx.Input.IP())
 	names, err := net.LookupAddr(ip)
 	if err != nil || len(names) == 0 {
 		thisData["Host"] = ""
@@ -236,7 +366,11 @@ func (this *MainController) GetAllJSON() {
 		thisData["Host"] = value
 	}
 
-	thisData["IP"] = this.Ctx.Input.IP()
+	thisData["IP"] = ip
+	thisData["Geoip2"], _ = this.QueryGeoip2(ip)
+	thisData["IPIP"], _ = this.QueryIPIPFree(ip)
+	thisData["QQWry"], _ = this.QueryQQWry(ip)
+	thisData["IP2Region"], _ = this.QueryIP2Region(ip)
 	remote_addr := []byte(this.Ctx.Request.RemoteAddr)
 	pos := bytes.IndexByte(remote_addr, ':')
 	thisData["Port"] = string(remote_addr[pos+1:])
@@ -278,7 +412,8 @@ func (this *MainController) Get() {
 	}
 	this.Data["Email"] = "missdeer@dfordsoft.com"
 	this.Data["UserAgent"] = this.Ctx.Request.UserAgent()
-	ip := this.Ctx.Input.IP()
+
+	ip := this.GetString("ip", this.Ctx.Input.IP())
 	names, err := net.LookupAddr(ip)
 	if err != nil || len(names) == 0 {
 		this.Data["Host"] = ""
@@ -290,7 +425,11 @@ func (this *MainController) Get() {
 		this.Data["Host"] = value
 	}
 
-	this.Data["IP"] = this.Ctx.Input.IP()
+	this.Data["IP"] = ip
+	this.Data["Geoip2"], _ = this.QueryGeoip2(ip)
+	this.Data["IPIP"], _ = this.QueryIPIPFree(ip)
+	this.Data["QQWry"], _ = this.QueryQQWry(ip)
+	this.Data["IP2Region"], _ = this.QueryIP2Region(ip)
 	remote_addr := []byte(this.Ctx.Request.RemoteAddr)
 	pos := bytes.IndexByte(remote_addr, ':')
 	this.Data["Port"] = string(remote_addr[pos+1:])
