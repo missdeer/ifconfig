@@ -45,6 +45,7 @@
     #button_plusone{width:70px;}
     #button_facebook{width:100px;}
     </style>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   </head>
   <body>
     <div id="container" class="clearfix">
@@ -65,7 +66,6 @@
       </div>
       <div id="ads">
 <!-- Ads begin -->
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
     style="display:inline-block;width:728px;height:15px"
     data-ad-client="ca-pub-3435940217424489"
@@ -83,7 +83,6 @@
             <td id="ip_address_cell"><strong id="ip_address">{{.IP}}</strong></td>
             <td rowspan="12" id="table_ads">
 <!-- Ads begin -->
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
     style="display:inline-block;width:250px;height:360px"
     data-ad-client="ca-pub-3435940217424489"
@@ -116,7 +115,6 @@
       </div>
       <div id="middle">
 <!-- Ads begin -->
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
     style="display:inline-block;width:728px;height:90px"
     data-ad-client="ca-pub-3435940217424489"
@@ -148,6 +146,17 @@
 </td></tr>
           <tr><td class="cli_command">$ curl {{.BaseUrl}}/all.json</td><td class="cli_arrow">&rArr;</td><td>{"connection":"{{.Connection}}","ip_addr":"{{.IP}}","lang":"{{.Lang}}","remote_host":"{{.Host}}","user_agent":"{{.UserAgent}}","charset":"{{.Charset}}","port":"{{.Port}}","via":"{{.Via}}","forwarded":"{{.Forwarded}}","mime":"{{.Mime}}","keep_alive":"{{.Keepalive}}","encoding":"{{.Encoding}}"}</td></tr>
         </table>
+      </div>
+      <div id="bottom">
+<!-- Ads begin -->
+<ins class="adsbygoogle"
+    style="display:inline-block;width:728px;height:90px"
+    data-ad-client="ca-pub-3435940217424489"
+    data-ad-slot="9166587836"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- Ads end -->
       </div>
       <div id="footer">&copy; 2014 - 2022 <a href="https://{{.BaseUrl}}">https://{{.BaseUrl}}</a></div>
     </div>
