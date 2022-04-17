@@ -81,11 +81,11 @@
           <tr>
             <td class="info_table_label">IP Address</td>
             <td id="ip_address_cell"><strong id="ip_address">{{.IP}}</strong></td>
-            <td rowspan="8" id="table_ads">
+            <td rowspan="12" id="table_ads">
 <!-- Ads begin -->
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
-    style="display:inline-block;width:250px;height:250px"
+    style="display:inline-block;width:250px;height:360px"
     data-ad-client="ca-pub-3435940217424489"
     data-ad-slot="9166587836"></ins>
 <script>
