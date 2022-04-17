@@ -52,7 +52,7 @@
         <table>
           <tr>
             <td>
-              <h1><a href="https://ifconfig.ismisv.com">What Is My IP Address? - Yet Another ifconfig</a></h1>
+              <h1><a href="https://{{.BaseUrl}}">What Is My IP Address? - Yet Another ifconfig</a></h1>
             </td>
             <td></td>
           </tr>
@@ -129,27 +129,27 @@
       <div id="cli_wrap">
         <h2>Command Line Interface</h2>
         <table id="cli_table" summary="cli">
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com</td><td class="cli_arrow">&rArr;</td><td>{{.IP}}</td></tr>
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com/ip</td><td class="cli_arrow">&rArr;</td><td>{{.IP}}</td></tr>
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com/host</td><td class="cli_arrow">&rArr;</td><td>{{.Host}}</td></tr>
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com/ua</td><td class="cli_arrow">&rArr;</td><td>{{.UserAgent}}</td></tr>
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com/port</td><td class="cli_arrow">&rArr;</td><td>{{.Port}}</td></tr>
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com/lang</td><td class="cli_arrow">&rArr;</td><td>{{.Lang}}</td></tr>
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com/keepalive</td><td class="cli_arrow">&rArr;</td><td>{{.Keepalive}}</td></tr>
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com/connection</td><td class="cli_arrow">&rArr;</td><td>{{.Connection}}</td></tr>
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com/encoding</td><td class="cli_arrow">&rArr;</td><td>{{.Encoding}}</td></tr>
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com/mime</td><td class="cli_arrow">&rArr;</td><td>{{.Mime}}</td></tr>
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com/charset</td><td class="cli_arrow">&rArr;</td><td>{{.Charset}}</td></tr>
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com/via</td><td class="cli_arrow">&rArr;</td><td>{{.Via}}</td></tr>
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com/forwarded</td><td class="cli_arrow">&rArr;</td><td>{{.Forwarded}}</td></tr>
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com/all</td><td class="cli_arrow">&rArr;</td><td>ip_addr: {{.IP}}<br />remote_host: {{.Host}} <br />user_agent: {{.UserAgent}}<br />port: {{.Port}}<br />lang: {{.Lang}}<br />connection: {{.Connection}}<br />keep_alive: {{.Keepalive}}<br />encoding: {{.Encoding}}<br />mime: {{.Mime}}<br />charset: {{.Charset}}<br />via: {{.Via}}<br />forwarded: {{.Forwarded}}<br /></td></tr>
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com/all.xml</td><td class="cli_arrow">&rArr;</td><td>&lt;info&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;charset&gt;{{.Charset}}&lt;/charset&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;connection&gt;{{.Connection}}&lt;/connection&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;encoding&gt;{{.Encoding}}&lt;/encoding&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;forwarded&gt;{{.Forwarded}}&lt;/forwarded&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;ip_addr&gt;{{.IP}}&lt;/ip_addr&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;keep_alive&gt;{{.Keepalive}}&lt;/keep_alive&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;lang&gt;{{.Lang}}&lt;/lang&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;mime&gt;{{.Mime}}&lt;/mime&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;port&gt;{{.Port}}&lt;/port&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;remote_host&gt;{{.Host}}&lt;/remote_host&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;user_agent&gt;{{.UserAgent}}&lt;/user_agent&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;via&gt;{{.Via}}&lt;/via&gt;<br />
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}</td><td class="cli_arrow">&rArr;</td><td>{{.IP}}</td></tr>
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}/ip</td><td class="cli_arrow">&rArr;</td><td>{{.IP}}</td></tr>
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}/host</td><td class="cli_arrow">&rArr;</td><td>{{.Host}}</td></tr>
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}/ua</td><td class="cli_arrow">&rArr;</td><td>{{.UserAgent}}</td></tr>
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}/port</td><td class="cli_arrow">&rArr;</td><td>{{.Port}}</td></tr>
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}/lang</td><td class="cli_arrow">&rArr;</td><td>{{.Lang}}</td></tr>
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}/keepalive</td><td class="cli_arrow">&rArr;</td><td>{{.Keepalive}}</td></tr>
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}/connection</td><td class="cli_arrow">&rArr;</td><td>{{.Connection}}</td></tr>
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}/encoding</td><td class="cli_arrow">&rArr;</td><td>{{.Encoding}}</td></tr>
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}/mime</td><td class="cli_arrow">&rArr;</td><td>{{.Mime}}</td></tr>
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}/charset</td><td class="cli_arrow">&rArr;</td><td>{{.Charset}}</td></tr>
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}/via</td><td class="cli_arrow">&rArr;</td><td>{{.Via}}</td></tr>
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}/forwarded</td><td class="cli_arrow">&rArr;</td><td>{{.Forwarded}}</td></tr>
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}/all</td><td class="cli_arrow">&rArr;</td><td>ip_addr: {{.IP}}<br />remote_host: {{.Host}} <br />user_agent: {{.UserAgent}}<br />port: {{.Port}}<br />lang: {{.Lang}}<br />connection: {{.Connection}}<br />keep_alive: {{.Keepalive}}<br />encoding: {{.Encoding}}<br />mime: {{.Mime}}<br />charset: {{.Charset}}<br />via: {{.Via}}<br />forwarded: {{.Forwarded}}<br /></td></tr>
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}/all.xml</td><td class="cli_arrow">&rArr;</td><td>&lt;info&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;charset&gt;{{.Charset}}&lt;/charset&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;connection&gt;{{.Connection}}&lt;/connection&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;encoding&gt;{{.Encoding}}&lt;/encoding&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;forwarded&gt;{{.Forwarded}}&lt;/forwarded&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;ip_addr&gt;{{.IP}}&lt;/ip_addr&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;keep_alive&gt;{{.Keepalive}}&lt;/keep_alive&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;lang&gt;{{.Lang}}&lt;/lang&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;mime&gt;{{.Mime}}&lt;/mime&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;port&gt;{{.Port}}&lt;/port&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;remote_host&gt;{{.Host}}&lt;/remote_host&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;user_agent&gt;{{.UserAgent}}&lt;/user_agent&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;via&gt;{{.Via}}&lt;/via&gt;<br />
 &lt;/info&gt;<br />
 </td></tr>
-          <tr><td class="cli_command">$ curl https://ifconfig.ismisv.com/all.json</td><td class="cli_arrow">&rArr;</td><td>{"connection":"{{.Connection}}","ip_addr":"{{.IP}}","lang":"{{.Lang}}","remote_host":"{{.Host}}","user_agent":"{{.UserAgent}}","charset":"{{.Charset}}","port":"{{.Port}}","via":"{{.Via}}","forwarded":"{{.Forwarded}}","mime":"{{.Mime}}","keep_alive":"{{.Keepalive}}","encoding":"{{.Encoding}}"}</td></tr>
+          <tr><td class="cli_command">$ curl {{.BaseUrl}}/all.json</td><td class="cli_arrow">&rArr;</td><td>{"connection":"{{.Connection}}","ip_addr":"{{.IP}}","lang":"{{.Lang}}","remote_host":"{{.Host}}","user_agent":"{{.UserAgent}}","charset":"{{.Charset}}","port":"{{.Port}}","via":"{{.Via}}","forwarded":"{{.Forwarded}}","mime":"{{.Mime}}","keep_alive":"{{.Keepalive}}","encoding":"{{.Encoding}}"}</td></tr>
         </table>
       </div>
-      <div id="footer">&copy; 2014 - 2022 <a href="https://ifconfig.ismisv.com">https://ifconfig.ismisv.com</a></div>
+      <div id="footer">&copy; 2014 - 2022 <a href="https://{{.BaseUrl}}">https://{{.BaseUrl}}</a></div>
     </div>
   </body>	
 </html>
