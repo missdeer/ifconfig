@@ -7,6 +7,7 @@ import (
 
 func init() {
 	web.Router("/", &controllers.MainController{}, "get:Get")
+	web.Router("/geo", &controllers.MainController{}, "get:GetGeo")
 	web.Router("/ipip", &controllers.MainController{}, "get:GetLocationFromIPIP")
 	web.Router("/ip2region", &controllers.MainController{}, "get:GetLocationFromIP2Region")
 	web.Router("/qqwry", &controllers.MainController{}, "get:GetLocationFromQQWry")
