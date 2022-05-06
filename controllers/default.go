@@ -410,60 +410,61 @@ func (this *MainController) GetGeo() {
 		this.Abort("404")
 		return
 	}
-	this.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ifconfig.ismisv.com")
-	this.Data["Email"] = web.AppConfig.DefaultString("email", "")
-	this.Data["UserAgent"] = this.Ctx.Request.UserAgent()
 
 	ip := this.GetString("ip", this.Ctx.Input.IP())
-	names, err := net.LookupAddr(ip)
-	if err != nil || len(names) == 0 {
-		this.Data["Host"] = ""
-	} else {
-		var value string
-		for _, v := range names {
-			value += fmt.Sprintf("%s\n", v)
-		}
-		this.Data["Host"] = value
-	}
 
 	this.Data["IP"] = ip
 	this.Data["Geoip2"], _ = this.QueryGeoip2(ip)
 	this.Data["IPIP"], _ = this.QueryIPIPFree(ip)
 	this.Data["QQWry"], _ = this.QueryQQWry(ip)
 	this.Data["IP2Region"], _ = this.QueryIP2Region(ip)
-	remote_addr := []byte(this.Ctx.Request.RemoteAddr)
-	pos := bytes.IndexByte(remote_addr, ':')
-	this.Data["Port"] = string(remote_addr[pos+1:])
-	this.Data["Method"] = this.Ctx.Request.Method
-	if len(this.Ctx.Request.Header["Accept-Encoding"]) > 0 {
-		this.Data["Encoding"] = this.Ctx.Request.Header["Accept-Encoding"][0]
-	}
-	if len(this.Ctx.Request.Header["Accept"]) > 0 {
-		this.Data["Mime"] = this.Ctx.Request.Header["Accept"][0]
-	}
-	if len(this.Ctx.Request.Header["Connection"]) > 0 {
-		this.Data["Connection"] = this.Ctx.Request.Header["Connection"][0]
-	}
-	if len(this.Ctx.Request.Header["Via"]) > 0 {
-		this.Data["Via"] = this.Ctx.Request.Header["Via"][0]
-	}
-	if len(this.Ctx.Request.Header["Charset"]) > 0 {
-		this.Data["Charset"] = this.Ctx.Request.Header["Charset"][0]
-	}
-	if len(this.Ctx.Request.Header["KeepAlive"]) > 0 {
-		this.Data["Keepalive"] = this.Ctx.Request.Header["KeepAlive"][0]
-	}
-	if len(this.Ctx.Request.Header["X-Forwarded-For"]) > 0 {
-		this.Data["Forwarded"] = this.Ctx.Request.Header["X-Forwarded-For"][0]
-	}
-	if len(this.Ctx.Request.Header["Accept-Language"]) > 0 {
-		this.Data["Lang"] = this.Ctx.Request.Header["Accept-Language"][0]
-	}
-	this.Data["Referer"] = this.Ctx.Input.Refer()
 
 	if strings.Contains(this.Ctx.Request.UserAgent(), "curl") {
 		this.TplName = "geo.tpl"
 	} else {
+		this.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ifconfig.ismisv.com")
+		this.Data["Email"] = web.AppConfig.DefaultString("email", "")
+		this.Data["UserAgent"] = this.Ctx.Request.UserAgent()
+		names, err := net.LookupAddr(ip)
+		if err != nil || len(names) == 0 {
+			this.Data["Host"] = ""
+		} else {
+			var value string
+			for _, v := range names {
+				value += fmt.Sprintf("%s\n", v)
+			}
+			this.Data["Host"] = value
+		}
+		remote_addr := []byte(this.Ctx.Request.RemoteAddr)
+		pos := bytes.IndexByte(remote_addr, ':')
+		this.Data["Port"] = string(remote_addr[pos+1:])
+		this.Data["Method"] = this.Ctx.Request.Method
+		if len(this.Ctx.Request.Header["Accept-Encoding"]) > 0 {
+			this.Data["Encoding"] = this.Ctx.Request.Header["Accept-Encoding"][0]
+		}
+		if len(this.Ctx.Request.Header["Accept"]) > 0 {
+			this.Data["Mime"] = this.Ctx.Request.Header["Accept"][0]
+		}
+		if len(this.Ctx.Request.Header["Connection"]) > 0 {
+			this.Data["Connection"] = this.Ctx.Request.Header["Connection"][0]
+		}
+		if len(this.Ctx.Request.Header["Via"]) > 0 {
+			this.Data["Via"] = this.Ctx.Request.Header["Via"][0]
+		}
+		if len(this.Ctx.Request.Header["Charset"]) > 0 {
+			this.Data["Charset"] = this.Ctx.Request.Header["Charset"][0]
+		}
+		if len(this.Ctx.Request.Header["KeepAlive"]) > 0 {
+			this.Data["Keepalive"] = this.Ctx.Request.Header["KeepAlive"][0]
+		}
+		if len(this.Ctx.Request.Header["X-Forwarded-For"]) > 0 {
+			this.Data["Forwarded"] = this.Ctx.Request.Header["X-Forwarded-For"][0]
+		}
+		if len(this.Ctx.Request.Header["Accept-Language"]) > 0 {
+			this.Data["Lang"] = this.Ctx.Request.Header["Accept-Language"][0]
+		}
+		this.Data["Referer"] = this.Ctx.Input.Refer()
+
 		this.TplName = "index.tpl"
 	}
 }
@@ -473,60 +474,59 @@ func (this *MainController) Get() {
 		this.Abort("404")
 		return
 	}
-	this.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ifconfig.ismisv.com")
-	this.Data["Email"] = web.AppConfig.DefaultString("email", "")
-	this.Data["UserAgent"] = this.Ctx.Request.UserAgent()
-
 	ip := this.GetString("ip", this.Ctx.Input.IP())
-	names, err := net.LookupAddr(ip)
-	if err != nil || len(names) == 0 {
-		this.Data["Host"] = ""
-	} else {
-		var value string
-		for _, v := range names {
-			value += fmt.Sprintf("%s\n", v)
-		}
-		this.Data["Host"] = value
-	}
-
 	this.Data["IP"] = ip
-	this.Data["Geoip2"], _ = this.QueryGeoip2(ip)
-	this.Data["IPIP"], _ = this.QueryIPIPFree(ip)
-	this.Data["QQWry"], _ = this.QueryQQWry(ip)
-	this.Data["IP2Region"], _ = this.QueryIP2Region(ip)
-	remote_addr := []byte(this.Ctx.Request.RemoteAddr)
-	pos := bytes.IndexByte(remote_addr, ':')
-	this.Data["Port"] = string(remote_addr[pos+1:])
-	this.Data["Method"] = this.Ctx.Request.Method
-	if len(this.Ctx.Request.Header["Accept-Encoding"]) > 0 {
-		this.Data["Encoding"] = this.Ctx.Request.Header["Accept-Encoding"][0]
-	}
-	if len(this.Ctx.Request.Header["Accept"]) > 0 {
-		this.Data["Mime"] = this.Ctx.Request.Header["Accept"][0]
-	}
-	if len(this.Ctx.Request.Header["Connection"]) > 0 {
-		this.Data["Connection"] = this.Ctx.Request.Header["Connection"][0]
-	}
-	if len(this.Ctx.Request.Header["Via"]) > 0 {
-		this.Data["Via"] = this.Ctx.Request.Header["Via"][0]
-	}
-	if len(this.Ctx.Request.Header["Charset"]) > 0 {
-		this.Data["Charset"] = this.Ctx.Request.Header["Charset"][0]
-	}
-	if len(this.Ctx.Request.Header["KeepAlive"]) > 0 {
-		this.Data["Keepalive"] = this.Ctx.Request.Header["KeepAlive"][0]
-	}
-	if len(this.Ctx.Request.Header["X-Forwarded-For"]) > 0 {
-		this.Data["Forwarded"] = this.Ctx.Request.Header["X-Forwarded-For"][0]
-	}
-	if len(this.Ctx.Request.Header["Accept-Language"]) > 0 {
-		this.Data["Lang"] = this.Ctx.Request.Header["Accept-Language"][0]
-	}
-	this.Data["Referer"] = this.Ctx.Input.Refer()
-
 	if strings.Contains(this.Ctx.Request.UserAgent(), "curl") {
 		this.TplName = "iponly.tpl"
 	} else {
+		this.Data["BaseUrl"] = web.AppConfig.DefaultString("baseurl", "ifconfig.ismisv.com")
+		this.Data["Email"] = web.AppConfig.DefaultString("email", "")
+		this.Data["UserAgent"] = this.Ctx.Request.UserAgent()
+
+		names, err := net.LookupAddr(ip)
+		if err != nil || len(names) == 0 {
+			this.Data["Host"] = ""
+		} else {
+			var value string
+			for _, v := range names {
+				value += fmt.Sprintf("%s\n", v)
+			}
+			this.Data["Host"] = value
+		}
+		this.Data["Geoip2"], _ = this.QueryGeoip2(ip)
+		this.Data["IPIP"], _ = this.QueryIPIPFree(ip)
+		this.Data["QQWry"], _ = this.QueryQQWry(ip)
+		this.Data["IP2Region"], _ = this.QueryIP2Region(ip)
+		remote_addr := []byte(this.Ctx.Request.RemoteAddr)
+		pos := bytes.IndexByte(remote_addr, ':')
+		this.Data["Port"] = string(remote_addr[pos+1:])
+		this.Data["Method"] = this.Ctx.Request.Method
+		if len(this.Ctx.Request.Header["Accept-Encoding"]) > 0 {
+			this.Data["Encoding"] = this.Ctx.Request.Header["Accept-Encoding"][0]
+		}
+		if len(this.Ctx.Request.Header["Accept"]) > 0 {
+			this.Data["Mime"] = this.Ctx.Request.Header["Accept"][0]
+		}
+		if len(this.Ctx.Request.Header["Connection"]) > 0 {
+			this.Data["Connection"] = this.Ctx.Request.Header["Connection"][0]
+		}
+		if len(this.Ctx.Request.Header["Via"]) > 0 {
+			this.Data["Via"] = this.Ctx.Request.Header["Via"][0]
+		}
+		if len(this.Ctx.Request.Header["Charset"]) > 0 {
+			this.Data["Charset"] = this.Ctx.Request.Header["Charset"][0]
+		}
+		if len(this.Ctx.Request.Header["KeepAlive"]) > 0 {
+			this.Data["Keepalive"] = this.Ctx.Request.Header["KeepAlive"][0]
+		}
+		if len(this.Ctx.Request.Header["X-Forwarded-For"]) > 0 {
+			this.Data["Forwarded"] = this.Ctx.Request.Header["X-Forwarded-For"][0]
+		}
+		if len(this.Ctx.Request.Header["Accept-Language"]) > 0 {
+			this.Data["Lang"] = this.Ctx.Request.Header["Accept-Language"][0]
+		}
+		this.Data["Referer"] = this.Ctx.Input.Refer()
+
 		this.TplName = "index.tpl"
 	}
 }
