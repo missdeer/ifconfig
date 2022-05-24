@@ -34,7 +34,7 @@ var (
 func init() {
 	geoip2Instance, _ = geoip.NewGeoIP(GeoLite2CityPath)
 	qqwryInstance, _ = qqwry.NewQQwry(QQWryPath)
-	ipipInstance, _ = ipip.NewIPIPFree(IPIPFreePath)
+	ipipInstance, _ = ipip.NewIPIP(IPIPFreePath)
 	ip2regionInstance, _ = ip2region.NewIp2Region(Ip2RegionPath)
 }
 
