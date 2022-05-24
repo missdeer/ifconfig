@@ -19,7 +19,6 @@ jobs:
     - name: Build
       run: |
         env GOOS=linux GOARCH=amd64 go build -o linux-amd64/ifconfig -ldflags="-s" .
-        env GOOS=linux GOARCH=386 go build -o linux-386/ifconfig -ldflags="-s" .
         env GOOS=linux GOARCH=arm GOARM=5 go build -o linux-arm-5/ifconfig -ldflags="-s" .
         env GOOS=linux GOARCH=arm GOARM=6 go build -o linux-arm-6/ifconfig -ldflags="-s" .
         env GOOS=linux GOARCH=arm GOARM=7 go build -o linux-arm-7/ifconfig -ldflags="-s" .
@@ -27,13 +26,9 @@ jobs:
         env GOOS=darwin GOARCH=amd64 go build -o darwin-amd64/ifconfig -ldflags="-s" .
         env GOOS=darwin GOARCH=arm64 go build -o darwin-arm64/ifconfig -ldflags="-s" .
         env GOOS=windows GOARCH=amd64 go build -o windows-amd64/ifconfig.exe -ldflags="-s" .
-        env GOOS=windows GOARCH=386 go build -o windows-386/ifconfig.exe -ldflags="-s" .
         env GOOS=freebsd GOARCH=amd64 go build -o freebsd-amd64/ifconfig -ldflags="-s" .
-        env GOOS=freebsd GOARCH=386 go build -o freebsd-386/ifconfig -ldflags="-s" .
         env GOOS=openbsd GOARCH=amd64 go build -o openbsd-amd64/ifconfig -ldflags="-s" .
-        env GOOS=openbsd GOARCH=386 go build -o openbsd-386/ifconfig -ldflags="-s" .
         env GOOS=netbsd GOARCH=amd64 go build -o netbsd-amd64/ifconfig -ldflags="-s" .
-        env GOOS=netbsd GOARCH=386 go build -o netbsd-386/ifconfig -ldflags="-s" .
         env GOOS=dragonfly GOARCH=amd64 go build -o dragonfly-amd64/ifconfig -ldflags="-s" .
         env GOPATH=$PWD/gopath go get -u github.com/missdeer/cicdutil
       
@@ -44,14 +39,6 @@ jobs:
         name: ifconfig-linux-amd64
         # Directory containing files to upload
         path: linux-amd64
-
-    - name: Upload artifact ifconfig-linux-386
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        # Artifact name
-        name: ifconfig-linux-386
-        # Directory containing files to upload
-        path: linux-386
 
     - name: Upload artifact ifconfig-linux-arm-5
       uses: actions/upload-artifact@v1.0.0
@@ -117,14 +104,6 @@ jobs:
         # Directory containing files to upload
         path: openbsd-amd64
 
-    - name: Upload artifact ifconfig-openbsd-386
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        # Artifact name
-        name: ifconfig-openbsd-386
-        # Directory containing files to upload
-        path: openbsd-386
-
     - name: Upload artifact ifconfig-netbsd-amd64
       uses: actions/upload-artifact@v1.0.0
       with:
@@ -132,14 +111,6 @@ jobs:
         name: ifconfig-netbsd-amd64
         # Directory containing files to upload
         path: netbsd-amd64
-
-    - name: Upload artifact ifconfig-netbsd-386
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        # Artifact name
-        name: ifconfig-netbsd-386
-        # Directory containing files to upload
-        path: netbsd-386
 
     - name: Upload artifact ifconfig-freebsd-amd64
       uses: actions/upload-artifact@v1.0.0
@@ -149,14 +120,6 @@ jobs:
         # Directory containing files to upload
         path: freebsd-amd64
 
-    - name: Upload artifact ifconfig-freebsd-386
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        # Artifact name
-        name: ifconfig-freebsd-386
-        # Directory containing files to upload
-        path: freebsd-386
-
     - name: Upload artifact ifconfig-windows-amd64
       uses: actions/upload-artifact@v1.0.0
       with:
@@ -164,15 +127,6 @@ jobs:
         name: ifconfig-windows-amd64
         # Directory containing files to upload
         path: windows-amd64
-
-    - name: Upload artifact ifconfig-windows-386
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        # Artifact name
-        name: ifconfig-windows-386
-        # Directory containing files to upload
-        path: windows-386
-
 
     - name: Remove old artifacts
       run: |
