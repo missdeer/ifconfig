@@ -30,11 +30,6 @@ jobs:
         env GOOS=openbsd GOARCH=amd64 go build -o openbsd-amd64/ifconfig -ldflags="-s" .
         env GOOS=netbsd GOARCH=amd64 go build -o netbsd-amd64/ifconfig -ldflags="-s" .
         env GOOS=dragonfly GOARCH=amd64 go build -o dragonfly-amd64/ifconfig -ldflags="-s" .
-        cd ..
-        git clone --depth 1 https://github.com/missdeer/cicdutil.git
-        cd cicdutil
-        env GOPATH=$PWD/gopath go build 
-        cd ..
       
     - name: Upload artifact ifconfig-linux-amd64
       uses: actions/upload-artifact@v1.0.0
@@ -131,7 +126,3 @@ jobs:
         name: ifconfig-windows-amd64
         # Directory containing files to upload
         path: windows-amd64
-
-    - name: Remove old artifacts
-      run: |
-        cicdutil/cicdutil -p github -u missdeer -t ${{ secrets.GH_TOKEN }} -r ifconfig -k 0 -a delete
