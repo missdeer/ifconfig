@@ -372,8 +372,8 @@ github.com/lightstep/lightstep-tracer-common/golang/gogo v0.0.0-20190605223551-b
 github.com/lightstep/lightstep-tracer-go v0.18.1/go.mod h1:jlF1pusYV4pidLvZ+XD0UBX0ZE6WURAspgAczcDHrL4=
 github.com/lionsoul2014/ip2region v2.2.0-release+incompatible h1:1qp9iks+69h7IGLazAplzS9Ca14HAxuD5c0rbFdPGy4=
 github.com/lionsoul2014/ip2region v2.2.0-release+incompatible/go.mod h1:+ZBN7PBoh5gG6/y0ZQ85vJDBe21WnfbRrQQwTfliJJI=
-github.com/lionsoul2014/ip2region/binding/golang v0.0.0-20220704023600-9376c56688c8 h1:aHOC8Mcbd3TiCb+L9cSbU/NdZinWuaKSoL4qD4I3MQo=
-github.com/lionsoul2014/ip2region/binding/golang v0.0.0-20220704023600-9376c56688c8/go.mod h1:bChUKvbKVC3zL/lLLIcu6alhQaL8uWD/DA+jRdyggdI=
+github.com/lionsoul2014/ip2region/binding/golang v0.0.0-20220705082050-0f0c0cb4a5a6 h1:4lJlR7mskbInnkGSixv0l7Ew/SD+xQUqWKu0KwvkpiI=
+github.com/lionsoul2014/ip2region/binding/golang v0.0.0-20220705082050-0f0c0cb4a5a6/go.mod h1:bChUKvbKVC3zL/lLLIcu6alhQaL8uWD/DA+jRdyggdI=
 github.com/lyft/protoc-gen-validate v0.0.13/go.mod h1:XbGvPuh87YZc5TdIa2/I4pLk0QoUACkjt2znoq26NVQ=
 github.com/magiconair/properties v1.8.6 h1:5ibWZ6iY0NctNGWo87LalDlEZ6R41TqbbDamhfG/Qzo=
 github.com/magiconair/properties v1.8.6/go.mod h1:y3VJvCyxH9uVvJTWEGAELF3aiYNyPKd5NZ3oSwXrF60=
@@ -583,8 +583,8 @@ github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9dec
 github.com/yuin/goldmark v1.3.5/go.mod h1:mwnBkeHKe2W/ZEtQ+71ViKU8L12m81fl3OWwC1Zlc8k=
 github.com/yuin/goldmark v1.4.0/go.mod h1:mwnBkeHKe2W/ZEtQ+71ViKU8L12m81fl3OWwC1Zlc8k=
 github.com/yuin/gopher-lua v0.0.0-20171031051903-609c9cd26973/go.mod h1:aEV29XrmTYFr3CiRxZeGHpkvbwq+prZduBqMaascyCU=
-github.com/zu1k/nali v0.4.7 h1:tLvu/QaMhm6jGi1qsio5tUteIZaXfH4nGwXof/KGfyo=
-github.com/zu1k/nali v0.4.7/go.mod h1:B0cq65fYqpAQCnF1FnT59NOq0A+9yxpQP+jRXKJea1w=
+github.com/zu1k/nali v0.4.8 h1:dj/itQWYlFHSs800Ra199P2GfT5UFlKbzxCjavm/m9s=
+github.com/zu1k/nali v0.4.8/go.mod h1:Fh16dQw+UWqZgaobraeAVA4Jp0wyOEQFs2xGLsHyjLE=
 go.etcd.io/bbolt v1.3.3/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=
 go.etcd.io/etcd v0.0.0-20191023171146-3cf2f69b5738/go.mod h1:dnLIgRNXwCJa5e+c6mIZCrds/GIG4ncV9HhK5PX7jPg=
 go.etcd.io/etcd/api/v3 v3.5.4/go.mod h1:5GB2vv4A4AOn3yk7MftYGHkUfGtDHnEraIjym4dYz5A=
