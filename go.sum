@@ -83,8 +83,8 @@ github.com/aryann/difflib v0.0.0-20170710044230-e206f873d14a/go.mod h1:DAHtR1m6l
 github.com/aws/aws-lambda-go v1.13.3/go.mod h1:4UKl9IzQMoD+QF79YdCuzCwp8VbmG4VAQwij/eHl5CU=
 github.com/aws/aws-sdk-go v1.27.0/go.mod h1:KmX6BPdI08NWTb3/sm4ZGu5ShLoqVDhKgpiN924inxo=
 github.com/aws/aws-sdk-go-v2 v0.18.0/go.mod h1:JWVYvqSMppoMJC0x5wdwiImzgXTI9FuZwxzkQq9wy+g=
-github.com/beego/beego/v2 v2.0.5 h1:fa2TBWfKGDs35Ck9an9SVnpS0zM8sRTXlW8rFjpeYlE=
-github.com/beego/beego/v2 v2.0.5/go.mod h1:CH2/JIaB4ceGYVQlYqTAFft4pVk/ol1ZkakUrUvAyns=
+github.com/beego/beego/v2 v2.0.6 h1:21Aqz3+RzUE1yP9a5xdU6LK54n9Z7NLEJtR4PE7NrPQ=
+github.com/beego/beego/v2 v2.0.6/go.mod h1:CH2/JIaB4ceGYVQlYqTAFft4pVk/ol1ZkakUrUvAyns=
 github.com/beego/x2j v0.0.0-20131220205130-a0352aadc542/go.mod h1:kSeGC/p1AbBiEp5kat81+DSQrZenVBZXklMLaELspWU=
 github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973/go.mod h1:Dwedo/Wpr24TaqPxmxbtue+5NUziq4I4S80YR8gNf3Q=
 github.com/beorn7/perks v1.0.0/go.mod h1:KWe93zE9D1o94FZ5RNwFwVgaQK1VOXiVxmqh+CedLV8=
