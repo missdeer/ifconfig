@@ -158,7 +158,7 @@
 </script>
 <!-- Ads end -->
       </div>
-      <div id="footer">&copy; 2014 - 2022 <a href="https://{{.BaseUrl}}">https://{{.BaseUrl}}</a></div>
+      <div id="footer">&copy; 2014 - 2023 <a href="https://{{.BaseUrl}}">https://{{.BaseUrl}}</a></div>
     </div>
   </body>	
 </html>
