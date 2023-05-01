@@ -897,8 +897,8 @@ github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9dec
 github.com/yuin/goldmark v1.3.5/go.mod h1:mwnBkeHKe2W/ZEtQ+71ViKU8L12m81fl3OWwC1Zlc8k=
 github.com/yuin/goldmark v1.4.13/go.mod h1:6yULJ656Px+3vBD8DxQVa3kxgyrAnzto9xy5taEt/CY=
 github.com/yuin/gopher-lua v0.0.0-20171031051903-609c9cd26973/go.mod h1:aEV29XrmTYFr3CiRxZeGHpkvbwq+prZduBqMaascyCU=
-github.com/zu1k/nali v0.7.2 h1:a/Jv2z4p99ZImYj9EaagSudoMSBpgpRHlkss6qcMWeQ=
-github.com/zu1k/nali v0.7.2/go.mod h1:KAirIivmgANO3P7fWNkEp4FAUsrxQ2lXz19+1yCYFeQ=
+github.com/zu1k/nali v0.7.3 h1:twj+XJEmo2w4n01Igkq0vshAWUq7rWyEWQHXwt4rO4U=
+github.com/zu1k/nali v0.7.3/go.mod h1:KAirIivmgANO3P7fWNkEp4FAUsrxQ2lXz19+1yCYFeQ=
 go.etcd.io/etcd/api/v3 v3.5.0/go.mod h1:cbVKeC6lCfl7j/8jBhAK6aIYO9XOjdptoxU/nLQcPvs=
 go.etcd.io/etcd/api/v3 v3.5.4/go.mod h1:5GB2vv4A4AOn3yk7MftYGHkUfGtDHnEraIjym4dYz5A=
 go.etcd.io/etcd/api/v3 v3.5.6/go.mod h1:KFtNaxGDw4Yx/BA4iPPwevUTAuqcsPxzyX8PHydchN8=
