@@ -3,7 +3,7 @@ module github.com/missdeer/ifconfig
 go 1.24.2
 
 require (
-	github.com/beego/beego/v2 v2.3.9
+	github.com/beego/beego/v2 v2.3.10
 	github.com/zu1k/nali v0.8.1
 )
 
